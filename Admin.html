@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gestor - Muana Milunga</title>
+<style>
+body{font-family:Arial,sans-serif;background:#f0f4f0;margin:0;padding:20px}
+.box{max-width:500px;margin:40px auto;background:white;padding:25px;border-radius:12px;box-shadow:0 4px 15px rgba(0,0,0,0.1)}
+h1,h2{color:#1a7a3a;text-align:center}
+input,textarea{width:100%;padding:12px;margin:8px 0;border:1px solid #ccc;border-radius:8px;box-sizing:border-box}
+button{width:100%;padding:13px;background:#1a7a3a;color:white;border:none;border-radius:8px;font-size:16px;cursor:pointer;margin-top:10px}
+.info{background:#e8f5e9;padding:12px;border-radius:8px;margin-top:15px;font-size:14px}
+.hidden{display:none}
+</style>
+</head>
+<body>
+<div class="box" id="loginBox">
+<h1>Muana Milunga</h1><p style="text-align:center">Área Privada do Gestor</p>
+<input type="text" id="user" placeholder="Utilizador">
+<input type="password" id="pass" placeholder="Senha">
+<button onclick="login()">Entrar</button>
+<p id="erro" style="color:red;text-align:center"></p>
+</div>
+<div class="box hidden" id="painel">
+<h2>Bem-vindo, Gestor 👋</h2>
+<label>Preço Consulta:</label><input type="text" id="preco" value="4.000 Kz">
+<label>WhatsApp 1:</label><input type="text" id="tel1" value="974 94 09 67">
+<label>WhatsApp 2:</label><input type="text" id="tel2" value="951 85 70 06">
+<label>Serviços:</label><textarea rows="5" id="servicos">Prostatite
+Infecção Urinária
+Ejaculação Precoce
+Impotência Sexual
+Hérnia</textarea>
+<button onclick="salvar()">Salvar Alterações</button>
+<button onclick="sair()" style="background:#666">Sair</button>
+<p id="ok" style="color:green;text-align:center"></p>
+<div class="info"><b>Para atualizar no site:</b><br>Se mudou algo, é só consultar o técnico no WhatsApp que ele atualiza o index.html em 5 minutos.</div>
+</div>
+<script>
+function login(){let u=document.getElementById('user').value;let p=document.getElementById('pass').value;if(u==='gestor'&&p==='Muana@2026'){document.getElementById('loginBox').classList.add('hidden');document.getElementById('painel').classList.remove('hidden')}else{document.getElementById('erro').innerText='Utilizador ou senha errada!'}}
+function salvar(){document.getElementById('ok').innerText='✅ Guardado! Agora manda mensagem ao técnico.'}
+function sair(){location.reload()}
+</script>
+</body>
+  </html>
